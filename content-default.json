@@ -1,0 +1,20 @@
+{
+ "site": {"name": "Revelino Heritage Suites", "tagline": "Tri apartmana u staroj kamenoj kući"},
+ "hero": {"title": "Revelino Heritage Suites", "subtitle": "Tri otmjena apartmana u autentičnoj kamenoj kući, gdje se tradicija susreće s mediteranskim luksuzom.", "image": "", "cta": "Upit za rezervaciju"},
+ "intro": {"title": "Dobrodošli u našu kuću", "text": "Revelino Heritage Suites smješten je u pažljivo obnovljenoj kamenoj kući. Svaki apartman čuva dušu starog zdanja, uz suvremenu udobnost i pažnju prema detaljima.\n\nOvaj tekst možete promijeniti u administraciji.", "image": ""},
+ "highlights": [
+  {"title": "Kamena baština", "text": "Autentična kamena kuća, pažljivo obnovljena."},
+  {"title": "Mediteranski duh", "text": "Svjetlost, mir i detalji koji čine odmor."},
+  {"title": "Osobni pristup", "text": "Domaćini koji brinu o svakom gostu."}
+ ],
+ "apartmentsTitle": "Naši apartmani",
+ "apartments": [
+  {"name": "Apartman jedan", "short": "Svijetao apartman s kamenim zidovima.", "description": "Ovdje upišite detaljan opis prvog apartmana.", "price": "od 120 €", "priceNote": "po noćenju", "guests": "2–4 gosta", "size": "45 m²", "image": "", "images": []},
+  {"name": "Apartman dva", "short": "Elegantan prostor za miran odmor.", "description": "Ovdje upišite detaljan opis drugog apartmana.", "price": "od 140 €", "priceNote": "po noćenju", "guests": "2–4 gosta", "size": "55 m²", "image": "", "images": []},
+  {"name": "Apartman tri", "short": "Najprostraniji apartman u kući.", "description": "Ovdje upišite detaljan opis trećeg apartmana.", "price": "od 160 €", "priceNote": "po noćenju", "guests": "4–6 gostiju", "size": "70 m²", "image": "", "images": []}
+ ],
+ "galleryTitle": "Galerija",
+ "gallery": [],
+ "contact": {"title": "Kontakt i rezervacije", "text": "Javite nam se za slobodne termine i sva pitanja.", "address": "Adresa, grad", "phone": "+385 00 000 0000", "email": "info@revelino.hr", "whatsapp": "", "instagram": ""},
+ "footer": "© Revelino Heritage Suites. Sva prava pridržana."
+}
