@@ -46,8 +46,8 @@ function field(obj,[p,label,type,opt],pre=''){
  if(type===T)return`<label>${label}</label><input type="text" value="${esc(v)}" data-p="${p}">`;
  if(type===A)return`<label>${label}</label><textarea data-p="${p}">${esc(v)}</textarea>`;
  if(type===I)return`<label>${label}</label><div class="row">${v?`<img class="thumb" src="${esc(v)}">`:'<span><small>nema fotografije</small></span>'}<button class="sm" data-act="pick">${v?'Zamijeni':'Dodaj'} fotografiju</button>${v?'<button class="sm del" data-act="clr">Ukloni</button>':''}</div>`.replace('data-act="pick"',`data-act="pick" data-p="${p}"`).replace('data-act="clr"',`data-act="clr" data-p="${p}"`);
- if(type==='imgs')return`<label>${label}</label><div class="imgs">${(v||[]).map((s,i)=>`<figure><img class="thumb" src="${esc(s)}"><br><button class="sm del" data-act="rmimg" data-p="${p}" data-i="${i}">Obriši</button></figure>`).join('')}</div><button class="sm add" data-act="addimgs" data-p="${p}">+ Dodaj fotografije</button>`;
- if(type==='gal')return`<div class="imgs">${(v||[]).map((g,i)=>`<figure><img class="thumb" src="${esc(g.src)}"><br><input type="text" placeholder="opis (neobavezno)" style="width:110px;font-size:12px" value="${esc(g.alt)}" data-gi="${i}"><br><button class="sm del" data-act="rmgal" data-i="${i}">Obriši</button></figure>`).join('')||'<small>Galerija je prazna.</small>'}</div><button class="sm add" data-act="addgal">+ Dodaj fotografije u galeriju</button>`;
+ if(type==='imgs')return`<label>${label}</label><div class="imgs">${(v||[]).map((s,i)=>`<figure><img class="thumb" src="${esc(s)}"><br><button class="sm" data-act="mvimg" data-d="-1" data-p="${p}" data-k="${i}" title="Pomakni lijevo">←</button> <button class="sm" data-act="mvimg" data-d="1" data-p="${p}" data-k="${i}" title="Pomakni desno">→</button><br><button class="sm del" data-act="rmimg" data-p="${p}" data-k="${i}">Obriši</button></figure>`).join('')}</div><button class="sm add" data-act="addimgs" data-p="${p}">+ Dodaj fotografije</button>`;
+ if(type==='gal')return`<div class="imgs">${(v||[]).map((g,i)=>`<figure><img class="thumb" src="${esc(g.src)}"><br><input type="text" placeholder="opis (neobavezno)" style="width:110px;font-size:12px" value="${esc(g.alt)}" data-gi="${i}"><br><button class="sm" data-act="mvgal" data-d="-1" data-i="${i}" title="Pomakni lijevo">←</button> <button class="sm" data-act="mvgal" data-d="1" data-i="${i}" title="Pomakni desno">→</button><br><button class="sm del" data-act="rmgal" data-i="${i}">Obriši</button></figure>`).join('')||'<small>Galerija je prazna.</small>'}</div><button class="sm add" data-act="addgal">+ Dodaj fotografije u galeriju</button>`;
  if(type==='list')return`<label>${label}</label>${(v||[]).map((it,i)=>`<div class="item"><h4>${opt.n} ${i+1}${it[opt.t]?': '+esc(it[opt.t]):''}</h4>${opt.f.map(f=>field(it,f).replace(/data-p="([^"]+)"/g,`data-p="$1" data-list="${p}" data-i="${i}"`)).join('')}${opt.fixed?'':`<p><button class="sm del" data-act="rmitem" data-p="${p}" data-i="${i}">Obriši ovu stavku</button></p>`}</div>`).join('')}${opt.fixed?'':`<button class="sm add" data-act="additem" data-p="${p}">+ Dodaj</button>`}`;
 }
 function render(){
@@ -62,7 +62,8 @@ document.addEventListener('click',async e=>{const el=e.target.closest('button');
  if(a==='pick')pick(false,u=>set(o,p,u));
  if(a==='clr'){set(o,p,'');render()}
  if(a==='addimgs')pick(true,u=>{(o[p]??=[]).push(u);mark()});
- if(a==='rmimg'){o[p].splice(i,1);mark();render()}
+ if(a==='mvimg'||a==='mvgal'){const arr=a==='mvimg'?o[p]:D.gallery,k=a==='mvimg'?+el.dataset.k:i,j=k+ +el.dataset.d;if(j>=0&&j<arr.length){[arr[k],arr[j]]=[arr[j],arr[k]];mark();render()}}
+ if(a==='rmimg'){o[p].splice(+el.dataset.k,1);mark();render()}
  if(a==='addgal')pick(true,u=>{D.gallery.push({src:u,alt:''});mark()});
  if(a==='rmgal'){if(confirm('Obrisati ovu fotografiju?')){D.gallery.splice(i,1);mark();render()}}
  if(a==='rmitem'){if(confirm('Obrisati ovu stavku?')){D[p].splice(i,1);mark();render()}}
