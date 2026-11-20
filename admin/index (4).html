@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Revelino Heritage Suites</title>
+<meta name="description" content="Tri luksuzna apartmana u staroj kamenoj kući.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f7f2e9;--sand:#e9dfcd;--stone:#8a7a62;--ink:#2b2620;--gold:#a8864f;--olive:#5d6247;--bg:var(--cream)}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{font:300 17px/1.75 Jost,sans-serif;color:var(--ink);background:var(--bg)}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.15}
+img{display:block;max-width:100%}.pre{white-space:pre-line}
+nav{position:fixed;inset:0 0 auto;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:18px 5vw;transition:.3s;color:#fff}
+nav.solid{background:rgba(247,242,233,.96);color:var(--ink);box-shadow:0 1px 0 var(--sand)}
+nav b{font:500 24px 'Cormorant Garamond',serif;letter-spacing:.06em;display:flex;align-items:center;gap:14px}nav b svg{display:block;width:auto;flex:none}nav.solid b svg{color:var(--gold)}
+nav div a{margin-left:28px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:inherit;text-decoration:none}
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;color:#fff;padding:120px 6vw 80px;background:linear-gradient(160deg,#6e5e46,#a8926b 55%,#c9b48c) center/cover}
+.hero h1{font-size:clamp(44px,8vw,96px);max-width:14ch;margin:0 auto 20px}
+.hero p{max-width:620px;margin:0 auto 36px;font-size:19px}
+.hero::before{content:"";position:absolute;inset:0;background:rgba(30,22,12,.38)}.hero>div{position:relative}
+.btn{display:inline-block;padding:15px 38px;border:1px solid currentColor;color:inherit;text-decoration:none;font-size:13px;letter-spacing:.2em;text-transform:uppercase;transition:.3s;cursor:pointer;background:none;font-family:inherit}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+section{padding:110px 6vw}.wrap{max-width:1180px;margin:auto}
+.eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+h2{font-size:clamp(34px,5vw,56px);margin-bottom:26px}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.ph{aspect-ratio:4/5;background:linear-gradient(150deg,var(--sand),#cdbd9f);object-fit:cover;width:100%}
+.hl{background:var(--sand)}.hl .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:50px;text-align:center}
+.hl h3{font-size:28px;margin-bottom:8px}.hl i{display:block;width:40px;height:1px;background:var(--gold);margin:0 auto 20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:40px;margin-top:50px}
+.card{cursor:pointer}.card .ph{aspect-ratio:4/3;transition:.6s}.card:hover .ph{transform:scale(1.03)}.card .im{overflow:hidden}
+.card h3{font-size:32px;margin:22px 0 6px}.card .pr{color:var(--gold);letter-spacing:.08em;margin-top:10px}
+.meta{font-size:14px;color:var(--stone);letter-spacing:.06em}
+.grid{columns:3 260px;gap:14px;margin-top:40px}.grid img{width:100%;margin-bottom:14px;cursor:zoom-in}
+.contact{background:var(--ink);color:var(--cream);text-align:center}.contact .eyebrow{color:#c9a96a}
+.contact ul{list-style:none;padding:0;margin:36px 0 44px;line-height:2.2}.contact a{color:inherit}
+footer{padding:30px;text-align:center;font-size:14px;color:var(--stone)}
+.modal{position:fixed;inset:0;background:rgba(20,15,10,.88);z-index:50;display:none;overflow:auto;padding:5vh 5vw}
+.modal.on{display:block}.box{background:var(--cream);max-width:980px;margin:auto;padding:40px;position:relative}
+.box .x,.lb .x{position:absolute;right:18px;top:10px;font-size:34px;cursor:pointer;background:none;border:0;color:inherit}
+.box .imgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:24px 0}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:60;display:none;place-items:center;color:#fff}.lb.on{display:grid}.lb img{max-height:92vh}
+@media(max-width:800px){.intro{grid-template-columns:1fr;gap:36px}nav div a{display:none}nav div a:last-child{display:inline}section{padding:76px 6vw}}
+nav,nav.solid{background:rgba(247,242,233,.97);color:var(--ink);box-shadow:0 1px 0 var(--sand);padding:10px 5vw}#logo{display:flex;flex-direction:column;align-items:center;text-decoration:none;color:#a8864f}.lg-m{width:150px;height:auto;display:block}.lg-n{font:500 25px/1 'Cormorant Garamond',serif;letter-spacing:.2em;padding-left:.2em;margin-top:5px;color:#2b2620}.lg-s{display:flex;align-items:center;gap:7px;margin-top:6px;font:500 7px/1 Jost,sans-serif;letter-spacing:.44em;padding-left:.44em;color:#6b5d46;white-space:nowrap}.lg-s i{display:block;width:16px;height:1px;background:#a8864f}.lg-st{display:flex;gap:4px;margin-top:6px}.lg-st svg{width:7px;height:7px;display:block}nav a{color:inherit}@media(max-width:600px){.lg-m{width:110px}.lg-n{font-size:19px}.lg-s{font-size:5.5px}}.lang{margin-left:22px;display:inline-flex;align-items:center}.lang button{background:none;border:0;font:500 12px Jost,sans-serif;letter-spacing:.14em;cursor:pointer;color:inherit;opacity:.45;padding:4px 6px}.lang button.on{opacity:1;color:#a8864f}@media(max-width:800px){.lang{margin-left:8px}}</style>
+</head>
+<body>
+<nav id="nav"><a id="logo" href="#" role="img" aria-label="Revelino Heritage Suites"><svg class="lg-m" viewBox="0 80 400 48" aria-hidden="true"><path d="M146 120 V92 H158 V100 H170 V92 H182 V100 H194 V92 H206 V100 H218 V92 H230 V100 H242 V92 H254 V120" fill="none" stroke="#a8864f" stroke-width="2.6" stroke-linejoin="miter" stroke-linecap="round"/><path d="M14 120.5 L146 118.5 V121.5 Z M386 120.5 L254 118.5 V121.5 Z" fill="#a8864f"/></svg><span class="lg-n">REVELINO</span><span class="lg-s"><i></i>HERITAGE SUITES<i></i></span><span class="lg-st"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.00,1.60 L14.70,8.88 L22.46,9.20 L16.37,14.02 L18.47,21.50 L12.00,17.20 L5.53,21.50 L7.63,14.02 L1.54,9.20 L9.30,8.88 Z" fill="#a8864f"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.00,1.60 L14.70,8.88 L22.46,9.20 L16.37,14.02 L18.47,21.50 L12.00,17.20 L5.53,21.50 L7.63,14.02 L1.54,9.20 L9.30,8.88 Z" fill="#a8864f"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.00,1.60 L14.70,8.88 L22.46,9.20 L16.37,14.02 L18.47,21.50 L12.00,17.20 L5.53,21.50 L7.63,14.02 L1.54,9.20 L9.30,8.88 Z" fill="#a8864f"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.00,1.60 L14.70,8.88 L22.46,9.20 L16.37,14.02 L18.47,21.50 L12.00,17.20 L5.53,21.50 L7.63,14.02 L1.54,9.20 L9.30,8.88 Z" fill="#a8864f"/></svg></span></a><div><a href="#apartmani" data-u="apt">Apartmani</a><a href="#galerija" data-u="gal">Galerija</a><a href="#kontakt" data-u="con">Kontakt</a><span class="lang"><button data-l="hr">HR</button><button data-l="en">EN</button><button data-l="de">DE</button></span></div></nav>
+<header class="hero" id="hero"><div><h1 id="h-t"></h1><p id="h-s" class="pre"></p><a class="btn" id="h-c" href="#kontakt"></a></div></header>
+<section><div class="wrap intro"><div><div class="eyebrow" data-u="e1">Baština · Mediteran</div><h2 id="i-t"></h2><p class="pre" id="i-x"></p></div><img class="ph" id="i-i" alt=""></div></section>
+<section class="hl"><div class="wrap" id="hl"></div></section>
+<section id="apartmani"><div class="wrap"><div class="eyebrow" data-u="e2">Smještaj</div><h2 id="a-t"></h2><div class="cards" id="cards"></div></div></section>
+<section id="galerija" style="padding-top:0"><div class="wrap"><div class="eyebrow" data-u="e3">Trenuci</div><h2 id="g-t"></h2><div class="grid" id="grid"></div></div></section>
+<section class="contact" id="kontakt"><div class="wrap"><div class="eyebrow" data-u="e4">Rezervacije</div><h2 id="c-t"></h2><p class="pre" id="c-x"></p><ul id="c-l"></ul><a class="btn" id="c-b"></a></div></section>
+<footer id="foot"></footer>
+<div class="modal" id="modal"><div class="box" id="box"></div></div>
+<div class="lb" id="lb"><button class="x" style="color:#fff">×</button><img alt=""></div>
+<script>
+const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const im=(src,alt,cls='ph')=>src?`<img class="${cls}" src="${esc(src)}" alt="${esc(alt)}" loading="lazy">`:`<div class="${cls} ph"></div>`;
+addEventListener('scroll',()=>$('nav').classList.toggle('solid',scrollY>60));
+const UI={hr:{apt:'Apartmani',gal:'Galerija',con:'Kontakt',e1:'Baština · Mediteran',e2:'Smještaj',e3:'Trenuci',e4:'Rezervacije'},
+en:{apt:'Apartments',gal:'Gallery',con:'Contact',e1:'Heritage · Mediterranean',e2:'Accommodation',e3:'Moments',e4:'Reservations'},
+de:{apt:'Apartments',gal:'Galerie',con:'Kontakt',e1:'Erbe · Mittelmeer',e2:'Unterkunft',e3:'Momente',e4:'Reservierungen'}};
+let D,LANG='hr';
+const tr=(k,v)=>(D.i18n&&D.i18n[LANG]&&D.i18n[LANG][k])||v;
+function pickLang(){let l='';try{l=localStorage.getItem('lang')||''}catch{}
+ if(!UI[l]){const n=(navigator.language||'hr').slice(0,2).toLowerCase();l=UI[n]?n:'hr'}return l}
+function setLang(l){LANG=l;try{localStorage.setItem('lang',l)}catch{}paint()}
+async function load(){
+ try{const r=await fetch('/api/content');D=await r.json()}catch{D=await (await fetch('/content-default.json')).json()}
+ LANG=pickLang();
+ document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+ paint();
+}
+function paint(){
+ const d=D,U=UI[LANG];
+ document.documentElement.lang=LANG;document.title=d.site.name;
+ document.querySelectorAll('[data-u]').forEach(e=>e.textContent=U[e.dataset.u]);
+ document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===LANG));
+ $('h-t').textContent=tr('hero.title',d.hero.title);$('h-s').textContent=tr('hero.subtitle',d.hero.subtitle);const cta=tr('hero.cta',d.hero.cta);$('h-c').textContent=cta;
+ if(d.hero.image)$('hero').style.backgroundImage=`url("${d.hero.image}")`;
+ $('i-t').textContent=tr('intro.title',d.intro.title);$('i-x').textContent=tr('intro.text',d.intro.text);
+ if(d.intro.image){if($('i-i'))$('i-i').src=d.intro.image}else if($('i-i'))$('i-i').remove();
+ $('hl').innerHTML=d.highlights.map((h,i)=>`<div><i></i><h3>${esc(tr(`highlights.${i}.title`,h.title))}</h3><p class="pre">${esc(tr(`highlights.${i}.text`,h.text))}</p></div>`).join('');
+ $('a-t').textContent=tr('apartmentsTitle',d.apartmentsTitle);
+ const A=(a,i)=>({name:tr(`apartments.${i}.name`,a.name),short:tr(`apartments.${i}.short`,a.short),description:tr(`apartments.${i}.description`,a.description),priceNote:tr(`apartments.${i}.priceNote`,a.priceNote),guests:tr(`apartments.${i}.guests`,a.guests)});
+ $('cards').innerHTML=d.apartments.map((a,i)=>{const t=A(a,i);return `<div class="card" data-i="${i}"><div class="im">${im(a.image||a.images?.[0],t.name,'ph')}</div><h3>${esc(t.name)}</h3><p class="pre">${esc(t.short)}</p><p class="meta">${esc([t.guests,a.size].filter(Boolean).join(' · '))}</p><p class="pr">${esc(a.price)} <span class="meta">${esc(t.priceNote)}</span></p></div>`}).join('');
+ document.querySelectorAll('.card').forEach(c=>c.onclick=()=>{const i=+c.dataset.i,a=d.apartments[i],t=A(a,i);
+  $('box').innerHTML=`<button class="x">×</button><h2>${esc(t.name)}</h2><p class="meta">${esc([t.guests,a.size].filter(Boolean).join(' · '))}</p><div class="imgs">${(a.images||[]).map(s=>im(s,t.name,'gi')).join('')}</div><p class="pre">${esc(t.description)}</p><p class="pr" style="color:var(--gold);margin:22px 0">${esc(a.price)} <span class="meta">${esc(t.priceNote)}</span></p><a class="btn" href="#kontakt" onclick="$('modal').classList.remove('on')">${esc(cta)}</a>`;
+  $('modal').classList.add('on');$('box').querySelector('.x').onclick=()=>$('modal').classList.remove('on');bindZoom($('box'))});
+ $('g-t').textContent=tr('galleryTitle',d.galleryTitle);
+ $('grid').innerHTML=d.gallery.map(g=>`<img src="${esc(g.src)}" alt="${esc(g.alt)}" loading="lazy">`).join('');bindZoom($('grid'));
+ const c=d.contact;$('c-t').textContent=tr('contact.title',c.title);$('c-x').textContent=tr('contact.text',c.text);
+ const wa=c.whatsapp&&`https://wa.me/${c.whatsapp.replace(/\D/g,'')}`,ig=c.instagram&&(c.instagram.startsWith('http')?c.instagram:`https://instagram.com/${c.instagram.replace('@','')}`);
+ $('c-l').innerHTML=[c.address&&esc(c.address),c.phone&&`<a href="tel:${esc(c.phone.replace(/\s/g,''))}">${esc(c.phone)}</a>`,c.email&&`<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`,wa&&`<a href="${esc(wa)}">WhatsApp</a>`,ig&&`<a href="${esc(ig)}">Instagram</a>`].filter(Boolean).map(x=>`<li>${x}</li>`).join('');
+ $('c-b').textContent=cta;$('c-b').href=c.email?`mailto:${c.email}`:'#';$('foot').textContent=tr('footer',d.footer);
+}
+function bindZoom(root){root.querySelectorAll('img').forEach(i=>i.onclick=()=>{$('lb').querySelector('img').src=i.src;$('lb').classList.add('on')})}
+$('lb').onclick=()=>$('lb').classList.remove('on');$('modal').onclick=e=>{if(e.target.id==='modal')$('modal').classList.remove('on')};
+load();
+</script>
+</body>
+</html>
